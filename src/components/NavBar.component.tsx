@@ -4,6 +4,7 @@ import React from 'react';
 import {CgMenu} from 'react-icons/cg';
 export default function NavBar(){
     const [isNavVisible, setNavVisible] =React.useState(false);
+    //Collapse or extend the hamburger menu
     const handlerNavBar = () =>{
         setNavVisible(!isNavVisible);
     }
@@ -18,13 +19,13 @@ export default function NavBar(){
                         <Link href='/'>
                             <li className='ml-10 text-sm uppercase hover:border-b hover:text-[#85c1e9]'>Inicio</li>
                         </Link>
-                        <Link href='/Projects'>
+                        <Link href='/projects'>
                             <li className='ml-10 text-sm uppercase hover:border-b hover:text-[#85c1e9] '>Proyectos</li>
                         </Link>
-                        <Link href='/Skills'>
+                        <Link href='/skills'>
                             <li className='ml-10 text-sm uppercase hover:border-b hover:text-[#85c1e9]'>Habilidades</li>
                         </Link>
-                        <Link href='/Contact'>
+                        <Link href='/contact'>
                             <li className='ml-10 text-sm uppercase hover:border-b hover:text-[#85c1e9]'>Contacto</li>
                         </Link>
                     </ul>
@@ -34,23 +35,23 @@ export default function NavBar(){
                     <div className={ isNavVisible ? 'fixed right-0 top-0 w-full h-screen bg-black/60': ''} >
                         <div className= {isNavVisible ? 'fixed right-0 top-0 w-[50%] sm:w-[45%]  bg-[#1F2A44] p-10 ease-in duration-300' : 'fixed right-[-100%] top-0 w-[75%] sm:w-[60%] md:w-[45%] bg-[#1F2A44] p-10 ease-in duration-300'} >
                             <div>
-                                <div className='flex w-full items-center justify-between'>
+                                <div className='flex w-full  justify-between'>
                                     <div onClick={handlerNavBar} className='rounded-full shadow-lg cursor-pointer p-3 shadow-gray-900 my-4 bg-[#087EA4]'>
                                         <CgMenu size={25}/>
                                     </div>
                                 </div>
-                                <div className='flex flex-col'>
+                                <div className='flex flex-col items-end'>
                                         <ul className='uppercase'>
                                             <Link href="/">
                                                 <li className="py-4text-base">Inicio </li>
                                             </Link>
-                                            <Link href="/Projects">
+                                            <Link href="/projects">
                                                 <li className="py-4 text-base">Proyectos</li>
                                             </Link>
-                                            <Link href="/Skills">
+                                            <Link href="/skills">
                                                 <li className="py-4 text-base">Habilidades </li>
                                             </Link>
-                                            <Link href="/Contact">
+                                            <Link href="/contact">
                                                 <li className="py-4 text-base">Contacto </li>
                                             </Link>
                                         </ul>
