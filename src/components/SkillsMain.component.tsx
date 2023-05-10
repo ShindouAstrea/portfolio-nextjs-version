@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import icons from '../../public/assets/icons/' ;
+import icons from '../../public/assets/icons/languages' ;
 
 export default function SkillsMain(){
     const iconsArray = Object.entries(icons).map(([key, value]) => ({ key, value }));
