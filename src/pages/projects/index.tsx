@@ -5,9 +5,8 @@ export default function Projects(){
         
         <div> 
             <NavBar/>
-            <div>
-                <h2>Hola</h2>
-            </div>
+           
         </div>
+            
     )
 }
