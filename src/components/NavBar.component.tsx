@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import {TbWorld} from 'react-icons/Tb';
 //Icon collapse
 import {CgMenu} from 'react-icons/cg';
 export default function NavBar(){
@@ -31,6 +32,9 @@ export default function NavBar(){
                         <Link href='/contact'>
                             <li className='ml-10 text-lg uppercase hover:border-b hover:text-[#85c1e9]'>Contacto</li>
                         </Link>
+                        <li className='ml-10 text-lg uppercase hover:border-b hover:text-[#85c1e9]'>
+                            <TbWorld size={25}/>
+                        </li>
                     </ul>
                     <div onClick={handlerNavBar} className='md:hidden cursor-pointer'>
                         <CgMenu size={25} />
@@ -45,6 +49,9 @@ export default function NavBar(){
                                 </div>
                                 <div className='flex flex-col items-end'>
                                         <ul className='uppercase'>
+                                            <li className='py-4 text-base'>
+                                                <TbWorld size={25}/>
+                                            </li>
                                             <Link href="/">
                                                 <li className="py-4text-base">Inicio </li>
                                             </Link>
@@ -57,6 +64,7 @@ export default function NavBar(){
                                             <Link href="/contact">
                                                 <li className="py-4 text-base">Contacto </li>
                                             </Link>
+                                            
                                         </ul>
                                     </div>
                             </div>
