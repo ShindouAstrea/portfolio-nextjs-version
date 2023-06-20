@@ -11,7 +11,7 @@ export default function ContactMain(){
                 {iconsArray.map((icon)=>
                   <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-100 bg-[#0e122a]">
                       <div className='flex flex-col items-center justify-center text-center '>
-                        <div >
+                        <div key={icon.key}>
                           <Image  key={icon.key} src={icon.value} alt={icon.key} className="min-[300px]:w-[80px] sm:w-[100px] lg:w-[200px]"/>
                           <h3>{icon.key}</h3>
                         </div>
