@@ -19,4 +19,10 @@
   li{
     @apply cursor-pointer;
   }
+  input{
+    @apply text-center bg-slate-800 border-b-2 border-slate-600 outline-none text-white
+  }
+  button{
+    @apply uppercase rounded-lg
+  }
 }
