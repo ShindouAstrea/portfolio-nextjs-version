@@ -24,6 +24,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@types/react-icons": "^3.0.0",
     "@types/text-table": "^0.2.2"
   }
 }
