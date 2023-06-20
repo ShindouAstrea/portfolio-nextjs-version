@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import {TbWorld} from 'react-icons/Tb';
+import {TbWorld} from 'react-icons/tb';
 //Icon collapse
 import {CgMenu} from 'react-icons/cg';
 export default function NavBar(){
