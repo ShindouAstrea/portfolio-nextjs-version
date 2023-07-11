@@ -5,6 +5,7 @@
 @layer base {
   *{
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
   }
   body{
     @apply bg-[#0A0C23] text-white tracking-wide
