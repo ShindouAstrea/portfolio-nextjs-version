@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from "next/image";
+import { useRouter } from 'next/router';
 import Icons from '../../public/assets/icons/rrss/';
 import {toast} from 'react-toastify' ;
 function bindLink(key: string){
@@ -32,7 +33,25 @@ export default function ContactMain(){
       sendMail(email);
       form.reset();
     }
+    const router = useRouter();
 
+    React.useEffect(() => {
+      // Obtén el hash del enlace interno si existe
+      const hash = router.asPath.split('#')[1];
+  
+      if (hash) {
+        // Utiliza el hash para encontrar el elemento con el id correspondiente
+        const element = document.getElementById(hash);
+  
+        // Si el elemento existe, realiza el desplazamiento suave hacia él
+        if (element) {
+          element.scrollIntoView({ behavior: 'auto' });
+        }
+      }
+    }, []);
+    const handlerSection=()=>{
+      router.push('/contact#contactForm');
+    }
       const notify = () => {
         toast('🦄 Formulario enviado exitosamente !', {
           position: "top-center",
@@ -58,12 +77,10 @@ export default function ContactMain(){
    
     return (
         <div className="w-full lg:h-screen p-2">
-          <div className=" max-w-[1240px] mx-auto flex flex-col justify-center h-full mt-[8rem] text-center">
-              <h1 className="uppercase text-4xl font-bold"> Contacto</h1>
-          
-           
-            <p className="my-4 p-5 text-lg">Contáctame por medio de mis redes sociales:</p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+           <div className='max-w-[1240px] mx-auto flex flex-col px-4 justify-center h-full mt-[8rem] text-center'>
+              <h1 className="uppercase text-4xl font-bold"> Contacto</h1>    
+              <p className="my-4 p-5 text-2xl">Contáctame por medio de mis redes sociales:</p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:mb-32 min-[300px]:mb-16">
                 {iconsArray.map((icon,index)=>
                   <React.Fragment  key={icon.key}>
                     <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-100 bg-[#0e122a]">
@@ -79,26 +96,33 @@ export default function ContactMain(){
                   </React.Fragment>
                 )}
               </div>
-          <div className="my-4 flex flex-col justify-center items-center">
-            <p className="my-4 p-5 text-lg"> o puedes escrbirme directamente y cuando sea posible te respondo :</p>
-            <form method="Post" aria-labelledby='Formulario de contacto' onSubmit={formHandler}>
-              <div className="my-4 lg:w-50 "aria-labelledby='formulario correo'>
-                <input name="email"type="email" autoComplete="FALSE" className="w-full h-14 "aria-label='entrada-correo'placeholder='Correo'/>
-              </div>
-              <div  className="my-4 lg:w-[500px]  "aria-labelledby="formulario-asunto">
-                <input name="subject"type="text"  autoComplete="TRUE"className="w-full h-14"aria-label='entrada-asunto'placeholder='Asunto'/>
-              </div>
-              <div  className="my-4 lg:w-[500px]"aria-labelledby='formulario mensaje'>
-                <textarea name="message"   rows={10} cols={10} autoComplete="FALSE"className="w-full bg-slate-800 border-b-2 border-slate-600 outline-none text-white p-6 resize-none"aria-label='entrada-mensaje'placeholder='Mensaje'/>
-              </div>
-              <div aria-labelledby="boton-envio-formulario" className='lg:w-50'>
-                <button type="submit" aria-label="Boton para enviar" className="w-full h-14 bg-[#087EA4] "> Enviar</button>
+              <p className='text-2xl cursor-pointer min-[300px]:text-lg' onClick={handlerSection}>Tambien me puedes enviar el siguiente formulario y a la brevedad me pongo en contacto contigo: </p>
 
-              </div>
-            </form>
+            </div>
 
-          </div>
-        </div>
-    </div> 
+            <section id="contactForm"  >
+
+              <div className='max-w-[1240px]  mx-auto p-4 flex flex-col justify-center h-full text-center'>
+
+                <h2 className="uppercase text-4xl font-bold min-[300px]:mt-5">Formulario de contacto</h2>  
+                  <div className="my-4 flex flex-col justify-center items-center lg:pb-32">
+                    <form method="Post" aria-labelledby='Formulario de contacto' onSubmit={formHandler} className='lg:w-[600px] min-[300px]:w-64'>
+                      <div className="my-4  "aria-labelledby='formulario correo'>
+                        <input name="email"type="email" autoComplete="FALSE" className="w-full h-14 "aria-label='entrada-correo'placeholder='Correo'/>
+                      </div>
+                      <div  className="my-4   "aria-labelledby="formulario-asunto">
+                        <input name="subject"type="text"  autoComplete="TRUE"className="w-full h-14"aria-label='entrada-asunto'placeholder='Asunto'/>
+                      </div>
+                      <div  className="my-4 "aria-labelledby='formulario mensaje'>
+                        <textarea name="message"   rows={10} cols={10} autoComplete="FALSE"className="w-full bg-slate-800 border-b-2 border-slate-600 outline-none text-white p-6 resize-none"aria-label='entrada-mensaje'placeholder='Mensaje'/>
+                      </div>
+                      <div aria-labelledby="boton-envio-formulario" >
+                        <button type="submit" aria-label="Boton para enviar" className="w-full h-14 bg-[#087EA4] "> Enviar</button>
+                      </div>
+                    </form>
+                </div>
+              </div>
+            </section>
+      </div> 
     )
 }

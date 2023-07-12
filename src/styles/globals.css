@@ -5,6 +5,10 @@
 @layer base {
   *{
     margin: 0;
+    font-family: 'Roboto', Times, serif;
+    padding: 0;
+    text-decoration: none;
+    
   }
   body{
     @apply bg-[#0A0C23] text-white tracking-wide
