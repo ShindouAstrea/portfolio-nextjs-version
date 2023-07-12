@@ -5,6 +5,10 @@
 @layer base {
   *{
     margin: 0;
+    font-family: 'Roboto', Times, serif;
+    padding: 0;
+    text-decoration: none;
+    
   }
   body{
     @apply bg-[#0A0C23] text-white tracking-wide
@@ -18,5 +22,11 @@
   }
   li{
     @apply cursor-pointer;
+  }
+  input{
+    @apply text-center bg-slate-800 border-b-2 border-slate-600 outline-none text-white
+  }
+  button{
+    @apply uppercase rounded-lg
   }
 }
