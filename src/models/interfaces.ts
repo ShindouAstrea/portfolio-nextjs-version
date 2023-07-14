@@ -3,7 +3,8 @@ export type Aplication = {
     id:string,
     imgSrc:string,
     tags:Array<string>,
-    description:string
+    description:string,
+    github:string
   }
   export type  ContextMenuProps ={
     xPos: number;
