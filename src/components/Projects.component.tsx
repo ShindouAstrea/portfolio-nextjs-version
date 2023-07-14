@@ -29,7 +29,7 @@ export default function ProjectsMain() {
       <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full mt-[8rem] text-center">
         <h1 className="uppercase text-4xl font-bold">Proyectos</h1>
         <p className="my-4 p-5 text-lg">Mira mis proyectos realizados y por realizar:</p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 min-[300px]:m-4">
           {appsList.map((app: Aplication) => (
             <div key={app.id} className="flex justify-center">
               <CardApp app={app} />
