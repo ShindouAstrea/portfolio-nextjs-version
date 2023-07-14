@@ -10,7 +10,7 @@ function CardApp({ app }: { app: Aplication }) {
                 <div className="flex flex-col h-full justify-between">
                     <div className="text-center">
                         <p className="my-1 text-white p-1 uppercase">{app.name}</p>
-                        <Image src={app.imgSrc} alt={app.name} width={200} height={200} className="mx-auto p-2 mb-2" priority={true} />
+                        <Image src={app.imgSrc} alt={app.name} width={200} height={200} className="mx-auto p-2 mb-2 object-contain" priority={true} />
                         {app['tags'].map((tag) => (
                             <span key={tag} className="bg-[#4a688c] rounded-lg text-white m-1 p-2">
                                 {tag}
