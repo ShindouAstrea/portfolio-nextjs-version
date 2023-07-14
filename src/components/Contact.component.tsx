@@ -96,7 +96,7 @@ export default function ContactMain(){
                   </React.Fragment>
                 )}
               </div>
-              <p className='text-2xl cursor-pointer min-[300px]:text-lg' onClick={handlerSection}>Tambien me puedes enviar el siguiente formulario y a la brevedad me pongo en contacto contigo: </p>
+              <p className='lg:text-2xl lg:mt-16 cursor-pointer min-[300px]:text-lg' onClick={handlerSection}>Tambien me puedes enviar el siguiente formulario y a la brevedad me pongo en contacto contigo: </p>
 
             </div>
 
