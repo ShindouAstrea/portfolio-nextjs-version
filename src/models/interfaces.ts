@@ -13,5 +13,5 @@ export type Aplication = {
  }
  export type apiResponse ={
   success: string;
-  apps: []
+  apps: Array<Object>;
  }
