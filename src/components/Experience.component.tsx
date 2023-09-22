@@ -24,24 +24,18 @@ export default function ExperienceMain() {
 
     return (
         <div className="w-full lg:h-screen p-2">
-            <div className=" max-w-[1240px] mx-auto flex flex-col justify-center h-full text-center">
-                <h1 className='uppercase text-4xl font-bold'> Experienia Laboral</h1>
-                <p className='my-4 p-5 text-lg '>¿Cuáles han sido mis empleos?</p>
-                <div className="grid  justify-center">
-
-                    <div className='flex flex-row items-center justify-center text-center gap-5' >
-                        {listJobs.map((job: Job) => (
-                            <div key={job.id} className="md:grid-cols-4">
-                                <JobCard job={job} />
-                            </div>
-                        ))}
-
-
-                    </div>
-
-
+            <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full mt-[8rem] text-center">
+                <h1 className="uppercase text-4xl font-bold">Experiencia </h1>
+                <p className="my-4 p-5 text-lg">¿Cuáles han sido mis trabajos?</p>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 min-[300px]:m-4">
+                    {listJobs.map((job: Job) => (
+                        <div key={job.id} className="flex justify-center ">
+                            <JobCard job={job} />
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
+
     )
 }
