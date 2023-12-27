@@ -31,6 +31,14 @@ export default function handler(
             "imgSrc":"/assets/projects/portafolio.png",
             "github":"https://github.com/ShindouAstrea/portfolio-nextjs-version"
         },   
+        {
+          "name": "Hanayome Chat",
+          "id":4,
+          "description":" Aplicación  móvil que simula el chat con ciertos personajes gracias a la API yesno.wtf , enviando si o no junto con un gif como respuesta",
+          "tags":["Flutter","Dart","Android","App"],
+          "imgSrc":"/assets/projects/hanayome_icon1.png",
+          "github":"https://github.com/ShindouAstrea/hanayome_chat"
+        }
     ];
   if (req.method !== 'GET') {
     res.status(405).json({ error: 'Método no permitido. Utiliza GET.' });
