@@ -6,7 +6,7 @@ import { Aplication } from '@/models/interfaces';
 function CardApp({ app }: { app: Aplication }) {
     return (
         <React.Fragment>
-            <div className="p-6 shadow-xl rounded-xl bg-[#0e122a] hover:scale-105 ease-in duration-100 m-auto justify-center max-[400px]:w-64">
+            <div className="p-6 shadow-xl rounded-xl bg-[#1A1F36] hover:scale-105 ease-in duration-100 m-auto justify-center max-[400px]:w-64">
                 <div className="flex flex-col h-full justify-between">
                     <div className="text-center">
                         <p className="my-1 text-white p-1 uppercase">{app.name}</p>
