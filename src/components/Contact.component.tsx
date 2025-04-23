@@ -17,7 +17,7 @@ function bindLink(key: string){
     case 'Linkedin':
       return 'https://www.linkedin.com/in/josesilvaaraneda/';
       
-    case 'Twitter':
+    case 'X':
       return 'https://twitter.com/josebastian_';
   }
 }
