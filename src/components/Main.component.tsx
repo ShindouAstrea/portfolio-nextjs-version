@@ -22,8 +22,7 @@ export default  function Main(){
                         <p className="text-justify justify-center text-gray-400 text-2xl lg:w-[80rem] px-1 ">
                         Algunas palabras que me describen son responsabilidad, flexibilidad, altruismo y paciencia.
                         Me apasiona aprender cosas nuevas y trabajar en proyectos que tengan un impacto positivo en la sociedad.
-                        Además, tengo habilidades en diferentes FrameWorks de desarrollo web, las cuales he adquirido a través de mi experiencia en  mi práctica profesional , proyectos personales, proyectos acádemicos y proyectos colaborativos. En mi tiempo libre, disfruto de escuchar mis playlist de Spotify, ejercitarme, ver series , jugar algunos juegos y desarrollar algunos proyectos personales.
-                        Estoy buscando oportunidades para trabajar en proyectos emocionantes que me permitan crecer profesionalmente y tener un impacto positivo en la sociedad. Si estás interesado en conocer más sobre mí o mi trabajo, no dudes en contactarme a través de <Link className='text-[#85c1e9] hover:underline' href="/contact ">mis diferentes redes sociales </Link>.
+                        Además, tengo habilidades en diferentes FrameWorks de desarrollo web, las cuales he adquirido a través de mi experiencia en  mi práctica profesional , proyectos personales, proyectos acádemicos y proyectos colaborativos. Si estás interesado en conocer más sobre mí o mi trabajo, no dudes en contactarme a través de <Link className='text-[#85c1e9] hover:underline' href="/contact ">mis diferentes redes sociales </Link>.
                         </p>
                 </div>
             </div>
