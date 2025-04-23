@@ -14,7 +14,7 @@ export default function NavBar() {
             <div className="flex justify-between items-center w-full h-full px-2xl:px-16 ">
                 <Link href='/'>
                     <div className='ml-8 mt-2 mb-2 cursor-pointer  '>
-                        <h3>Jose Silva Web Page</h3>
+                        <h3>Jose Silva Portfolio</h3>
                     </div>
                 </Link>
 
