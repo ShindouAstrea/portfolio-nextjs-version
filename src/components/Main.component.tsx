@@ -7,7 +7,7 @@ export default  function Main(){
     }
     return(
         <div  className=' w-full lg:h-screen p-2 ' onContextMenu={handlerContext}>
-            <div className='max-w-[1240px] mx-auto flex flex-col justify-center h-full mt-[8rem] text-center'>
+            <div className='max-w-[1240px] mx-auto flex flex-col justify-stretch h-full mt-[8rem] text-center'>
                 <div className='flex flex-col text-center items-center alig gap-8'>
                     <h1 className=' text-white text-4xl font-bold uppercase text-center min-[300px]:w-[20rem] px-2'>Acerca de mi</h1>
                    
