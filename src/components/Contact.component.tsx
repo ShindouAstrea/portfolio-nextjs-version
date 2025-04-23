@@ -83,7 +83,7 @@ export default function ContactMain(){
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:mb-32 min-[300px]:mb-16">
                 {iconsArray.map((icon,index)=>
                   <React.Fragment  key={icon.key}>
-                    <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-100 bg-[#0e122a]">
+                    <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-100 bg-[#1A1F36]">
                       <div className='flex flex-col items-center justify-center text-center cursor-pointer ' >
                         <a href={icon.link} target="_blank" rel="noopener noreferrer">
                           <div key={index}>
