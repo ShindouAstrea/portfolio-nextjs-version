@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import Icons from '../../public/assets/icons/rrss/';
 import {toast} from 'react-toastify' ;
 function bindLink(key: string){
-  console.log(key);
   switch(key){
 
 
@@ -104,7 +103,7 @@ export default function ContactMain(){
 
               <div className='max-w-[1240px]  mx-auto p-4 flex flex-col justify-center h-full text-center'>
 
-                <h2 className="uppercase text-4xl font-bold min-[300px]:mt-5">Formulario de contacto</h2>  
+                <h2 className="uppercase text-4xl font-bold min-[300px]:mt-5">MI AAA de CONTACTO</h2>  
                   <div className="my-4 flex flex-col justify-center items-center lg:pb-32">
                     <form method="Post" aria-labelledby='Formulario de contacto' onSubmit={formHandler} className='lg:w-[600px] min-[300px]:w-64'>
                       <div className="my-4  "aria-labelledby='formulario correo'>

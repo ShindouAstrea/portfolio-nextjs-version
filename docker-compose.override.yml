@@ -1,0 +1,16 @@
+
+services:
+  web:
+    container_name: web_portfolio
+    build:
+      context: .
+      target: dev   # usamos la etapa dev del Dockerfile
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    command: npm run dev
+    ports:
+      - "3000:3000"
+      - "3001:3001"
