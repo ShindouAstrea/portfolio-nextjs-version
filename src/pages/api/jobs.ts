@@ -25,7 +25,7 @@ const data: Array<object> = [
         title: "Ingeniero de Desarrollo",
         start: "Agosto 2023",
         end: "Actualmente",
-        tags: ["Javascript", "Php", "SQL", "Jquery", "Ajax", "Api Rest"],
+        tags: ["Javascript", "Php", "SQL", "Jquery", "Ajax", "Api Rest","Laravel 11/12","ClickUp"],
         description: "Encargado del desarrollo de proyectos en Php junto con Javascript,Jquery y Ajax. Desarrollo y optimización de sentencias SQL para la interacción con la base de datos. Participación en actividades de revisión de codigo , para debugging y mejoras en el desarrollo de proyectos realizados",
         company: "CDGO"
     }
