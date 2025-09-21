@@ -21,6 +21,7 @@ RUN \
 # Desarrollo
 # ----------------------------------------
 FROM deps AS dev
+ENV NODE_ENV=development
 # En dev, dejamos node_modules dentro del contenedor y mapeamos el código fuente con volumen
 COPY . .
 # Exponemos puerto del dev server de Next.js
