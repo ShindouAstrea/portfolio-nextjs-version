@@ -12,6 +12,6 @@ services:
         target: /app
     environment:
       - NODE_ENV=development
-    command: npm run dev
+    command: npm run initial
     ports:
       - "3000:3000"

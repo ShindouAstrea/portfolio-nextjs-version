@@ -99,7 +99,7 @@ export default function ContactMain(){
 
             </div>
 
-            <section id="contactForm"  >
+            <section id="contactForm" >
 
               <div className='max-w-[1240px]  mx-auto p-4 flex flex-col justify-center h-full text-center'>
 
