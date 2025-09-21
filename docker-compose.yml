@@ -1,6 +1,6 @@
 
 services:
-  web:
+  app:
     build:
       context: .
       target: runner   # por defecto, producción
