@@ -35,9 +35,10 @@ export default function NavBar() {
                         <Link href='/contact'>
                             <li className='ml-10 text-lg uppercase hover:border-b hover:text-[#85c1e9]'>Contacto</li>
                         </Link>
-                        <li className='ml-10 text-lg uppercase hover:border-b hover:text-[#85c1e9]'>
+                        {/* DISABLED TEMPORALMENTE */}
+                        {/* <li className='ml-10 text-lg uppercase hover:border-b hover:text-[#85c1e9]'>
                             <TbWorld size={25} />
-                        </li>
+                        </li> */}
                     </ul>
                     <div onClick={handlerNavBar} className='md:hidden cursor-pointer'>
                         <CgMenu size={25} />
@@ -56,7 +57,7 @@ export default function NavBar() {
                                             <TbWorld size={25} />
                                         </li>
                                         <Link href="/">
-                                            <li className="py-4text-base">Inicio </li>
+                                            <li className="py-4 text-base">Inicio </li>
                                         </Link>
                                         <Link href="/projects">
                                             <li className="py-4 text-base">Proyectos</li>
