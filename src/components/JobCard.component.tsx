@@ -8,7 +8,7 @@ function JobCard({ job }: { job: Job }) {
         return (
             <ul className='list-disc p-2'>
                 {descriptionList.map((line: string, index: number) => (
-                    <li className="decoration-gray-100" key={index}>{line}</li>
+                    <li className="decoration-gray-100 text-justify mb-2" key={index}>{line}</li>
                 ))}
             </ul>
         );
