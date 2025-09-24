@@ -60,10 +60,10 @@ export default function NavBar() {
                                             <li className="py-4 text-base  hover:border-b hover:text-[#85c1e9]">Inicio </li>
                                         </Link>
                                         <Link href="/projects">
-                                            <li className="py-4 text-base  hover:border-b hover:text-[#85c1e9]">Proyectos</li>
+                                            <li className="py-4 text-base  hover:border-b hover:text-[#85c1e9]">Proyectos </li>
                                         </Link>
                                         <Link href="/experiences">
-                                            <li className="py-4 text-base  hover:border-b hover:text-[#85c1e9]">Experiencia</li>
+                                            <li className="py-4 text-base  hover:border-b hover:text-[#85c1e9]">Experiencia </li>
                                         </Link>
                                         <Link href="/skills">
                                             <li className="py-4 text-base  hover:border-b hover:text-[#85c1e9]">Habilidades </li>
