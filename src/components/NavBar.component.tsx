@@ -57,19 +57,19 @@ export default function NavBar() {
                                             <TbWorld size={25} />
                                         </li>
                                         <Link href="/">
-                                            <li className="py-4 text-base  hover:border-b hover:text-[#85c1e9]">Inicio </li>
+                                            <li className="py-4 text-base  hover:border-b hover:text-[#85c1e9]">Inicio</li>
                                         </Link>
                                         <Link href="/projects">
-                                            <li className="py-4 text-base  hover:border-b hover:text-[#85c1e9]">Proyectos </li>
+                                            <li className="py-4 text-base  hover:border-b hover:text-[#85c1e9]">Proyectos</li>
                                         </Link>
                                         <Link href="/experiences">
-                                            <li className="py-4 text-base  hover:border-b hover:text-[#85c1e9]">Experiencia </li>
+                                            <li className="py-4 text-base  hover:border-b hover:text-[#85c1e9]">Experiencia</li>
                                         </Link>
                                         <Link href="/skills">
-                                            <li className="py-4 text-base  hover:border-b hover:text-[#85c1e9]">Habilidades </li>
+                                            <li className="py-4 text-base  hover:border-b hover:text-[#85c1e9]">Habilidades</li>
                                         </Link>
                                         <Link href="/contact">
-                                            <li className="py-4 text-base  hover:border-b hover:text-[#85c1e9]">Contacto </li>
+                                            <li className="py-4 text-base  hover:border-b hover:text-[#85c1e9]">Contacto</li>
                                         </Link>
 
                                     </ul>
