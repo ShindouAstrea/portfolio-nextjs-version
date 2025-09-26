@@ -26,7 +26,7 @@ const data: Array<object> = [
         start: "Agosto 2023",
         end: "Actualmente",
         tags: ["Javascript", "Php", "SQL", "Jquery", "Ajax", "Api Rest","Laravel 11/12","ClickUp"],
-        description: "Encargado del desarrollo de proyectos en Php junto con Javascript,Jquery y Ajax. Desarrollo y optimización de sentencias SQL para la interacción con la base de datos. Participación en actividades de revisión de codigo , para debugging y mejoras en el desarrollo de proyectos realizados",
+        description: "Encargado del desarrollo de proyectos en Php junto con Javascript,Jquery y Ajax. Desarrollo y optimización de sentencias SQL para la interacción con la base de datos. Participación en actividades de revisión de codigo , para debugging y mejoras en el desarrollo de proyectos realizados.Planificación y Desarrollo de integraciones de API's.",
         company: "CDGO"
     }
 ]
