@@ -30,6 +30,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@types/next": "^8.0.7",
     "@types/node": "^20.10.5",
     "@types/react-icons": "^3.0.0",
     "@types/text-table": "^0.2.2"
