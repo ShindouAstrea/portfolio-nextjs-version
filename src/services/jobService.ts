@@ -1,5 +1,6 @@
 import { supabase } from '@/lib/supabase'
 import { Job } from '@/models/interfaces'
+import { start } from 'repl'
 
 /**
  * Fetch all jobs/experiences from Supabase
@@ -9,7 +10,7 @@ export async function getJobs(): Promise<Job[]> {
     const { data, error } = await supabase
       .from('jobs')
       .select('*')
-      .order('created_at', { ascending: false })
+      .order('start_date', { ascending: false })
 
     if (error) {
       console.error('Error fetching jobs:', error)
@@ -19,6 +20,8 @@ export async function getJobs(): Promise<Job[]> {
     // Parse tags if they come as JSON string from database
     return (data || []).map((job: any) => ({
       ...job,
+      start_date: job?.start_date!=null ? new Date(job.start_date).toLocaleDateString(): '',
+      end_date: job?.end_date!=null ? new Date(job.end_date).toLocaleDateString(): ' Actualmente',
       tags: typeof job.tags === 'string' ? JSON.parse(job.tags) : job.tags
     }))
   } catch (error) {

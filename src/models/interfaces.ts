@@ -17,8 +17,8 @@ export type Job = {
   id: string | number;
   title: string;
   company: string;
-  start: string; // Format: "Month Year" or ISO date
-  end: string; // Format: "Month Year" or ISO date
+  start_date: string; // Format: "Month Year" or ISO date
+  end_date: string; // Format: "Month Year" or ISO date
   tags: string[]; // JSON array or comma-separated string from DB
   description: string;
   created_at?: string;

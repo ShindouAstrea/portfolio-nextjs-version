@@ -14,11 +14,14 @@ export async function getApplications(): Promise<Aplication[]> {
     if (error) {
       console.error('Error fetching applications:', error)
       return []
+    }else{
+      console.log('Fetched applications:', data)
     }
 
     // Parse tags if they come as JSON string from database
     return (data || []).map((app: any) => ({
       ...app,
+      imgSrc: app.imgsrc || app.imgSrc, // Normalize property name
       tags: typeof app.tags === 'string' ? JSON.parse(app.tags) : app.tags
     }))
   } catch (error) {
@@ -45,6 +48,7 @@ export async function getApplicationById(id: string | number): Promise<Aplicatio
 
     return {
       ...data,
+      imgSrc: data.imgsrc || data.imgSrc, // Normalize property name
       tags: typeof data.tags === 'string' ? JSON.parse(data.tags) : data.tags
     }
   } catch (error) {

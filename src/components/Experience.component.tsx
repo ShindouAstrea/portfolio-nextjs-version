@@ -21,13 +21,20 @@ export default function ExperienceMain() {
         };
         getAppsList();
     }, []);
+    console.log(listJobs)
 
     return (
-        <div className="w-full lg:h-screen p-2">
-            <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full mt-[8rem] text-center">
-                <h1 className="uppercase text-4xl font-bold">Experiencia </h1>
-                <p className="my-4 p-5 text-lg">¿Cuáles han sido mis trabajos?</p>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 min-[300px]:m-4">
+        <div className="w-full min-h-screen p-2">
+            <div className="max-w-[1240px] mx-auto flex flex-col justify-center min-h-screen mt-[8rem] lg:mt-[4rem]">
+                <div className="text-center mb-12">
+                    <h1 className="text-5xl font-bold mb-2">
+                        <span className='text-white'>Work </span>
+                        <span className='bg-gradient-to-r from-[#60D5FF] to-[#3B9DD9] bg-clip-text text-transparent'>Experience</span>
+                    </h1>
+                    <p className="text-gray-400 text-lg mt-4">Mi trayectoria profesional</p>
+                    <div className='w-24 h-1 bg-gradient-to-r from-[#60D5FF] via-[#3B9DD9] to-[#2563EB] mx-auto mt-6'></div>
+                </div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                     {listJobs.map((job: Job) => (
                         <div key={job.id} className="flex justify-center ">
                             <JobCard job={job} />

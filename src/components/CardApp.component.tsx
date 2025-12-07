@@ -6,27 +6,61 @@ import { Aplication } from '@/models/interfaces';
 function CardApp({ app }: { app: Aplication }) {
     return (
         <React.Fragment>
-            <div className="p-6 shadow-xl rounded-xl bg-[#1A1F36] hover:scale-105 ease-in duration-100 m-auto justify-center max-[400px]:w-64">
-                <div className="flex flex-col h-full justify-between">
-                    <div className="text-center">
-                        <p className="my-1 text-white p-1 uppercase">{app.name}</p>
-                        <Image src={app.imgSrc} alt={app.name} width={200} height={200} className="mx-auto p-2 mb-2 object-contain max-[400px]:w-[100px] max-[400px]:h-[100px]" priority={true} />
+            <div className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-[#1E3A5F] to-[#142847] shadow-2xl hover:shadow-[#60D5FF]/30 transition-all duration-300 h-full flex flex-col border border-[#3B9DD9]/20 hover:border-[#60D5FF]/50">
+                <div className="absolute inset-0 bg-gradient-to-b from-[#60D5FF]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                <div className="relative h-48 bg-gradient-to-br from-[#0F1424] to-[#1E3A5F] overflow-hidden">
+                    <div className='flex items-center justify-center h-full'>
+                        <Image 
+                            src={app.imgSrc} 
+                            alt={app.name} 
+                            width={180} 
+                            height={180} 
+                            className="object-contain group-hover:scale-110 transition-transform duration-300" 
+                            priority={true} 
+                        />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0F1424] via-transparent to-transparent" />
+                </div>
+
+                <div className="relative flex flex-col flex-grow p-6 z-10">
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#60D5FF] transition-colors">
+                        {app.name}
+                    </h3>
+                    
+                    <p className="text-gray-400 text-sm mb-4 flex-grow">
+                        {app.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mb-6">
                         {app['tags'].map((tag) => (
-                            <span key={tag} className="bg-[#4a688c] rounded-lg text-white m-1 p-2">
+                            <span 
+                                key={tag} 
+                                className="px-3 py-1 rounded-full text-xs font-semibold bg-[#60D5FF]/10 text-[#60D5FF] border border-[#60D5FF]/40 hover:bg-[#60D5FF]/20 transition-colors"
+                            >
                                 {tag}
                             </span>
                         ))}
-                        <p className="p-1 m-2">{app.description}</p>
                     </div>
-                    <div className="text-center mb-2">
-                        <a target="_blank"type="button" aria-label="Enlace de github"href={app.github}>
-                            <button type="button" aria-label="Boton para enviar" className="w-52 rounded-md h-10 hover:scale-105 ease-in duration-100 bg-[#087EA4] justify-center text-center items-center mx-auto"> Ver Codigo</button>
-                        </a>
-                    </div>
+
+                    <a 
+                        href={app.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub repository"
+                        className="w-full"
+                    >
+                        <button 
+                            type="button" 
+                            className="w-full py-2 px-4 rounded-lg bg-gradient-to-r from-[#60D5FF] to-[#3B9DD9] text-[#0F1424] font-semibold hover:shadow-lg hover:shadow-[#60D5FF]/50 transition-all duration-300 flex items-center justify-center gap-2 group/btn"
+                        >
+                            <span>View on GitHub</span>
+                            <span className='group-hover/btn:translate-x-1 transition-transform'>→</span>
+                        </button>
+                    </a>
                 </div>
             </div>
         </React.Fragment>
-
     )
 
 }

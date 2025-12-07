@@ -11,7 +11,7 @@
     
   }
   body{
-    @apply bg-[#0A0C23] text-white tracking-wide
+    @apply bg-gradient-to-br from-[#0F1424] via-[#1A1F3A] to-[#0D1428] text-white tracking-wide
   }
   h1, h2, h3, h4, h5, h6{
     @apply font-bold 
