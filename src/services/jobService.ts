@@ -20,8 +20,6 @@ export async function getJobs(): Promise<Job[]> {
     // Parse tags if they come as JSON string from database
     return (data || []).map((job: any) => ({
       ...job,
-      start_date: job?.start_date!=null ? new Date(job.start_date).toLocaleDateString(): '',
-      end_date: job?.end_date!=null ? new Date(job.end_date).toLocaleDateString(): ' Actualmente',
       tags: typeof job.tags === 'string' ? JSON.parse(job.tags) : job.tags
     }))
   } catch (error) {

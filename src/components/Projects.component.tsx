@@ -1,13 +1,18 @@
 import React from 'react';
 import { Aplication } from "@/models/interfaces";
 import CardApp from "./CardApp.component";
+import Loading from "./Loading.component";
 
 export default function ProjectsMain() {
   const [appsList, setAppsList] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [error, setError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     const getAppsList = async () => {
       try {
+        setIsLoading(true);
+        setError(null);
         const response = await fetch('/api/apps', {
           method: 'GET',
         });
@@ -20,6 +25,9 @@ export default function ProjectsMain() {
         setAppsList(data.data || []);
       } catch (error) {
         console.error('Error al obtener la lista de aplicaciones', error);
+        setError('Error al cargar los proyectos');
+      } finally {
+        setIsLoading(false);
       }
     };
     getAppsList();
@@ -37,13 +45,27 @@ export default function ProjectsMain() {
           <p className="text-gray-400 text-lg mt-4">Algunos de mis trabajos más destacados</p>
           <div className='w-24 h-1 bg-gradient-to-r from-[#60D5FF] via-[#3B9DD9] to-[#2563EB] mx-auto mt-6'></div>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {appsList?.map((app: Aplication) => (
-            <div key={app.id} className="flex justify-center">
-              <CardApp app={app} />
-            </div>
-          ))}
-        </div>
+        {isLoading ? (
+          <div className="flex justify-center items-center min-h-[400px]">
+            <Loading />
+          </div>
+        ) : error ? (
+          <div className="flex justify-center items-center min-h-[400px]">
+            <p className="text-red-400 text-lg">{error}</p>
+          </div>
+        ) : appsList.length === 0 ? (
+          <div className="flex justify-center items-center min-h-[400px]">
+            <p className="text-gray-400 text-lg">No hay proyectos disponibles</p>
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {appsList?.map((app: Aplication) => (
+              <div key={app.id} className="flex justify-center">
+                <CardApp app={app} />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

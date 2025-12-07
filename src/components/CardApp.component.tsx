@@ -54,7 +54,7 @@ function CardApp({ app }: { app: Aplication }) {
                             type="button" 
                             className="w-full py-2 px-4 rounded-lg bg-gradient-to-r from-[#60D5FF] to-[#3B9DD9] text-[#0F1424] font-semibold hover:shadow-lg hover:shadow-[#60D5FF]/50 transition-all duration-300 flex items-center justify-center gap-2 group/btn"
                         >
-                            <span>View on GitHub</span>
+                            <span>Ver en GitHub</span>
                             <span className='group-hover/btn:translate-x-1 transition-transform'>→</span>
                         </button>
                     </a>

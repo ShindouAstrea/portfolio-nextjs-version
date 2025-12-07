@@ -1,11 +1,18 @@
 import * as React from 'react';
 import { Job } from '@/models/interfaces';
 import JobCard from './JobCard.component';
+import Loading from './Loading.component';
+
 export default function ExperienceMain() {
     const [listJobs, setJob] = React.useState([]);
+    const [isLoading, setIsLoading] = React.useState(true);
+    const [error, setError] = React.useState<string | null>(null);
+
     React.useEffect(() => {
         const getAppsList = async () => {
             try {
+                setIsLoading(true);
+                setError(null);
                 const response = await fetch('/api/jobs', {
                     method: 'GET',
                 });
@@ -17,10 +24,14 @@ export default function ExperienceMain() {
                 setJob(data["data"]);
             } catch (error) {
                 console.error('Error al obtener la lista de Trabajos', error);
+                setError('Error al cargar los trabajos');
+            } finally {
+                setIsLoading(false);
             }
         };
         getAppsList();
     }, []);
+    
     console.log(listJobs)
 
     return (
@@ -34,13 +45,27 @@ export default function ExperienceMain() {
                     <p className="text-gray-400 text-lg mt-4">Mi trayectoria profesional</p>
                     <div className='w-24 h-1 bg-gradient-to-r from-[#60D5FF] via-[#3B9DD9] to-[#2563EB] mx-auto mt-6'></div>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    {listJobs.map((job: Job) => (
-                        <div key={job.id} className="flex justify-center ">
-                            <JobCard job={job} />
-                        </div>
-                    ))}
-                </div>
+                {isLoading ? (
+                    <div className="flex justify-center items-center min-h-[400px]">
+                        <Loading />
+                    </div>
+                ) : error ? (
+                    <div className="flex justify-center items-center min-h-[400px]">
+                        <p className="text-red-400 text-lg">{error}</p>
+                    </div>
+                ) : listJobs.length === 0 ? (
+                    <div className="flex justify-center items-center min-h-[400px]">
+                        <p className="text-gray-400 text-lg">No hay experiencias disponibles</p>
+                    </div>
+                ) : (
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                        {listJobs.map((job: Job) => (
+                            <div key={job.id} className="flex justify-center ">
+                                <JobCard job={job} />
+                            </div>
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
 

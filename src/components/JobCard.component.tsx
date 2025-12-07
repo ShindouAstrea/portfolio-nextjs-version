@@ -1,8 +1,28 @@
 import React from 'react';
 import { Job } from '@/models/interfaces';
 
-
 function JobCard({ job }: { job: Job }) {
+    const formatDate = (dateString: string | null | undefined): string => {
+        // Si es null, undefined o string vacío, es el trabajo actual
+        if (!dateString || dateString === '' || dateString === 'Actualmente') {
+            return 'Actualmente';
+        }
+        
+        try {
+            const date = new Date(dateString);
+            // Validar que la fecha sea válida (no sea NaN)
+            if (isNaN(date.getTime())) {
+                return 'Actualmente';
+            }
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const year = date.getFullYear();
+            return `${day}-${month}-${year}`;
+        } catch {
+            return 'Actualmente';
+        }
+    };
+
     const ListadoDescription = ({ description }: { description: string }) => {
         const descriptionList: Array<string> = description.split('.');
         return (
@@ -24,7 +44,7 @@ function JobCard({ job }: { job: Job }) {
                             {job.title}
                         </h3>
                         <p className='text-sm font-semibold text-[#60D5FF]'>{job.company}</p>
-                        <p className='text-xs text-gray-400 mt-1'>📅 {job.start_date} - {job?.end_date ?? 'Actualmente'}</p>
+                        <p className='text-xs text-gray-400 mt-1'>📅 {formatDate(job.start_date)} - {formatDate(job.end_date)}</p>
                     </div>
 
                     <div className="flex flex-wrap gap-2 mb-4">
