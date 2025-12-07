@@ -78,9 +78,11 @@ export default function Main() {
     "React",
     "TypeScript",
     "Node.js",
-    "Next.js"
+    "Next.js",
+    "PHP",
+    "Laravel"
   ],
-  experience: "5+ years"
+  experience: "3+ años"
 }`}</code>
                             </pre>
                         </div>
