@@ -73,7 +73,7 @@ export default function Main() {
                             <pre className='p-4 text-sm text-[#60D5FF] font-mono overflow-auto max-h-80'>
 <code>{`const developer = {
   name: "José Silva",
-  role: "Software Engineer",
+  role: "Software Engineer / Developer",
   skills: [
     "React",
     "TypeScript",
