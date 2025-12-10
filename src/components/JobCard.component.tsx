@@ -44,7 +44,7 @@ function JobCard({ job }: { job: Job }) {
                             {job.title}
                         </h3>
                         <p className='text-sm font-semibold text-[#60D5FF]'>{job.company}</p>
-                        <p className='text-xs text-gray-400 mt-1'>📅 {formatDate(job.start_date)} - {formatDate(job.end_date)}</p>
+                        <p className='text-xs text-gray-400 mt-1'>{formatDate(job.start_date)} - {formatDate(job.end_date)}</p>
                     </div>
 
                     <div className="flex flex-wrap gap-2 mb-4">
