@@ -24,7 +24,8 @@ function JobCard({ job }: { job: Job }) {
     };
 
     const ListadoDescription = ({ description }: { description: string }) => {
-        const descriptionList: Array<string> = description.split('.');
+        const descriptionListWithEmptys: Array<string> = description.split('.');
+        const descriptionList:Array<string> = descriptionList.filter((description)=>description!='');
         return (
             <ul className='list-disc p-2 text-left'>
                 {descriptionList.map((line: string, index: number) => (
