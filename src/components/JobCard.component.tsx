@@ -24,7 +24,8 @@ function JobCard({ job }: { job: Job }) {
     };
 
     const ListadoDescription = ({ description }: { description: string }) => {
-        const descriptionList: Array<string> = description.split('.');
+        const descriptionListWithEmptys: Array<string> = description.split('.');
+        const descriptionList:Array<string> = descriptionListWithEmptys.filter((description)=>description!='');
         return (
             <ul className='list-disc p-2 text-left'>
                 {descriptionList.map((line: string, index: number) => (
@@ -44,7 +45,7 @@ function JobCard({ job }: { job: Job }) {
                             {job.title}
                         </h3>
                         <p className='text-sm font-semibold text-[#60D5FF]'>{job.company}</p>
-                        <p className='text-xs text-gray-400 mt-1'>📅 {formatDate(job.start_date)} - {formatDate(job.end_date)}</p>
+                        <p className='text-xs text-gray-400 mt-1'>{formatDate(job.start_date)} - {formatDate(job.end_date)}</p>
                     </div>
 
                     <div className="flex flex-wrap gap-2 mb-4">
