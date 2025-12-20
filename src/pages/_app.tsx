@@ -12,6 +12,12 @@ export default function App({ Component, pageProps }: AppProps) {
         // Solo en cliente, y solo una vez
         if (typeof window === 'undefined') return;
 
+        // Obtener intervalo de la variable de entorno (default: 30 minutos)
+        const interval = parseInt(
+          process.env.NEXT_PUBLIC_HEALTH_CHECK_INTERVAL || '30',
+          10
+        );
+
         // Obtener estado del scheduler
         const statusResponse = await fetch('/api/scheduler', {
           method: 'POST',
@@ -23,14 +29,14 @@ export default function App({ Component, pageProps }: AppProps) {
 
         // Si no está corriendo, iniciarlo
         if (!statusData.data?.isRunning) {
-          console.log('🚀 Iniciando Health Check Scheduler...');
+          console.log(`🚀 Iniciando Health Check Scheduler (intervalo: ${interval} min)...`);
           
           const startResponse = await fetch('/api/scheduler', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
               action: 'start', 
-              intervalMinutes: 30 // Configurable
+              intervalMinutes: interval
             }),
           });
 

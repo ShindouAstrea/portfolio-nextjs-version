@@ -2,16 +2,30 @@
 
 services:
   app:
-    container_name: web_portfolio
+    container_name: portfolio-app-dev
     build:
       context: .
       target: dev   # usamos la etapa dev del Dockerfile
+      dockerfile: Dockerfile
     volumes:
       - type: bind
         source: .
         target: /app
+      - /app/node_modules
+      - /app/.next
     environment:
       - NODE_ENV=development
-    command: npm run initial
+      - DEBUG=*
+      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - NEXT_PUBLIC_HEALTH_CHECK_INTERVAL=5
+    command: npm run dev
     ports:
       - "3000:3000"
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge
